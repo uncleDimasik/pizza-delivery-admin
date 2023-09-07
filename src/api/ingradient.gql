@@ -1,0 +1,40 @@
+query Ingredient($where: IngradientLabelWhereUniqueInput!) {
+    ingredient(where: $where) {
+        id
+        image
+        name
+        updatedAt
+    }
+}
+query Ingredients {
+    ingredients {
+        id
+        image
+        name
+        updatedAt
+    }
+}
+
+mutation UpdateIngredient($data: IngradientLabelUpdateInput!, $where: IngradientLabelWhereUniqueInput!) {
+    updateIngredient(data: $data, where: $where) {
+        id
+        image
+        name
+    }
+}
+
+mutation RemoveIngredient($where: IngradientLabelWhereUniqueInput!) {
+    removeIngredient(where: $where) {
+        id
+        image
+        name
+    }
+}
+
+mutation CreateIngredient($data: IngradientLabelCreateInput!) {
+    createIngredient(data: $data) {
+        id
+        image
+        name
+    }
+}

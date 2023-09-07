@@ -1,0 +1,42 @@
+query Option($where: OptionsWhereUniqueInput!) {
+    option(where: $where) {
+        id
+        name
+        price
+       updatedAt
+    }
+}
+query Options {
+    options {
+        id
+        name
+        price
+        updatedAt
+    }
+}
+
+mutation UpdateOption($data: OptionsUpdateInput!, $where: OptionsWhereUniqueInput!) {
+    updateOption(data: $data, where: $where) {
+        id
+        name
+        price
+        updatedAt
+    }
+}
+
+mutation CreateOption($data: OptionsCreateInput!) {
+    createOption(data: $data) {
+        id
+        name
+        price
+    }
+}
+
+mutation RemoveOption($where: OptionsWhereUniqueInput!) {
+    removeOption(where: $where) {
+        id
+        name
+        price
+        updatedAt
+    }
+}

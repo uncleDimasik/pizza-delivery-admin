@@ -1,0 +1,118 @@
+query Order($where: OrderWhereUniqueInput!) {
+    order(where: $where) {
+        id
+        updatedAt
+        status
+        totalPrice
+        number
+        changeFor
+        orderType
+        paymentType
+        description
+        deliveryAddress
+        user {
+            id
+            phone
+            email
+            name
+        }
+        items {
+            id
+            good {
+                id
+                name
+                images
+                price
+                slug
+                updatedAt
+            }
+            customerDish {
+                id
+                price
+                updatedAt
+                parentDish {
+                    id
+                    name
+                    images
+                    slug
+                }
+                selectedOption {
+                    name
+                    price
+                    id
+                }
+                selectedToppings {
+                    price
+                    ingredientLabel {
+                        name
+                        image
+                    }
+                    id
+                }
+            }
+        }
+    }
+}
+query Orders( $where: OrderWhereInput,$orderBy: [OrderOrderByWithRelationInput!]) {
+    orders(where: $where,orderBy: $orderBy) {
+        id
+        updatedAt
+        status
+        totalPrice
+        number
+        changeFor
+        orderType
+        paymentType
+        description
+        deliveryAddress
+        user {
+            id
+            phone
+            email
+            name
+        }
+        items {
+            id
+            good {
+                id
+                name
+                images
+                price
+                slug
+                updatedAt
+            }
+            customerDish {
+                id
+                price
+                updatedAt
+                parentDish {
+                    id
+                    name
+                    images
+                    slug
+                }
+                selectedOption {
+                    name
+                    price
+                    id
+                }
+                selectedToppings {
+                    price
+                    ingredientLabel {
+                        name
+                        image
+                    }
+                    id
+                }
+            }
+        }
+    }
+}
+
+mutation UpdateOrder($data: OrderUpdateInput!, $where: OrderWhereUniqueInput!) {
+    updateOrder(data: $data, where: $where) {
+        id
+        updatedAt
+        status
+    }
+}

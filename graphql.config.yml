@@ -1,0 +1,5 @@
+schema:  'http://localhost:5000/graphql'
+#from env
+documents: 'src/apollo/**/*.gql'
+exclude: 'src/**/__tests__/**'
+include: src/**

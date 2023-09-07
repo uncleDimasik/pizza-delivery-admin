@@ -1,0 +1,6 @@
+query WhoAmI {
+    whoAmI {
+        id
+        roles
+    }
+}

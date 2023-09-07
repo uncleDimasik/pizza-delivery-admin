@@ -1,0 +1,102 @@
+query RestaurantsId {
+    restaurants {
+        id
+        name
+        city
+        updatedAt
+        address
+    }
+}
+
+query Restaurants($where: RestaurantWhereInput) {
+    restaurants(where: $where) {
+        id
+        name
+        address
+        order {
+            id
+            updatedAt
+            status
+            items {
+                good {
+                    id
+                    name
+                    images
+                    price
+                    slug
+                    updatedAt
+                }
+                customerDish {
+                    id
+                    price
+                    selectedOption {
+                        name
+                        price
+                        id
+                    }
+                    selectedToppings {
+                        price
+                        ingredientLabel {
+                            name
+                            image
+                        }
+                        id
+                    }
+                }
+            }
+        }
+    }
+}
+
+query Restaurant($where: RestaurantWhereUniqueInput!) {
+    restaurant(where: $where) {
+        id
+        name
+        address
+        order {
+            id
+            updatedAt
+            status
+            totalPrice
+            number
+
+            changeFor
+            orderType
+            paymentType
+            description
+            deliveryAddress
+            user {
+                id
+                phone
+            }
+            items {
+                good {
+                    id
+                    name
+                    images
+                    price
+                    slug
+                    updatedAt
+                }
+                customerDish {
+                    id
+                    price
+                    selectedOption {
+                        name
+                        price
+                        id
+                    }
+                    selectedToppings {
+                        price
+                        ingredientLabel {
+                            name
+                            image
+                        }
+                        id
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,67 @@
+query Good($where: GoodWhereUniqueInput!) {
+    good(where: $where) {
+        id
+        images
+        name
+        price
+        slug
+        description
+        updatedAt
+        category {
+            id
+            name
+        }
+    }
+}
+query Goods {
+    goods {
+        id
+        images
+        name
+        price
+        slug
+        description
+        updatedAt
+        category {
+            id
+            name
+        }
+    }
+}
+
+mutation CreateGood($data: GoodCreateInput!) {
+    createGood(data: $data) {
+        id
+        images
+        name
+        price
+        slug
+        updatedAt
+        description
+    }
+}
+mutation UpdateGood($data: GoodUpdateInput!, $where: GoodWhereUniqueInput!) {
+    updateGood(data: $data, where: $where) {
+        id
+        name
+        images
+        price
+        slug
+        updatedAt
+        description
+        createdAt
+    }
+}
+
+mutation RemoveGood($where: GoodWhereUniqueInput!) {
+    removeGood(where: $where) {
+        id
+        name
+        images
+        price
+        slug
+        updatedAt
+        description
+        createdAt
+    }
+}

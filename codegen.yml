@@ -1,0 +1,20 @@
+overwrite: true
+schema:  'http://localhost:5000/graphql'
+#from env
+documents: 'src/api/*.gql'
+generates:
+  src/@generated/generated.graphql.ts:
+    config:
+      constEnums: true
+      immutableTypes: true
+      dedupeOperationSuffix: true
+      documentMode: 'documentNodeImportFragments'
+      nonOptionalTypename: true
+      #      omitOperationSuffix: true
+      preResolveTypes: true
+      withHooks: true
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+

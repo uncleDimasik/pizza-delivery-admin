@@ -1,0 +1,41 @@
+query Categories {
+    categories {
+        id
+        image
+        name
+        updatedAt
+    }
+}
+
+query Category($where: CategoryWhereUniqueInput!) {
+    category(where: $where) {
+        id
+        image
+        name
+        updatedAt
+    }
+}
+
+mutation CreateCategory($data: CategoryCreateInput!) {
+    createCategory(data: $data) {
+        id
+        image
+        name
+    }
+}
+
+mutation UpdateCategory($data: CategoryUpdateInput!, $where: CategoryWhereUniqueInput!) {
+    updateCategory(data: $data, where: $where) {
+        id
+        name
+        image
+    }
+}
+
+mutation RemoveCategory($where: CategoryWhereUniqueInput!) {
+    removeCategory(where: $where) {
+        id
+        image
+        name
+    }
+}

@@ -1,0 +1,86 @@
+query Dish($where: DishWhereUniqueInput!) {
+    dish(where: $where) {
+        id
+        images
+        name
+        price
+        slug
+        description
+        updatedAt
+        category {
+            id
+            name
+        }
+        ingradients {
+            id
+            name
+            image
+        }
+        options {
+            id
+            name
+            price
+            toppings {
+                id
+                price
+                ingredientLabel {
+                    id
+                    name
+                    image
+                }
+            }
+        }
+    }
+}
+query Dishes {
+    dishes {
+        id
+        images
+        name
+        price
+        slug
+        description
+        updatedAt
+        category {
+            id
+            name
+        }
+    }
+}
+
+mutation CreateDish($data: DishCreateInput!) {
+    createDish(data: $data) {
+        id
+        images
+        name
+        price
+        slug
+        updatedAt
+        description
+    }
+}
+mutation UpdateDish($data: DishUpdateInput!, $where: DishWhereUniqueInput!) {
+    updateDish(data: $data, where: $where) {
+        id
+        name
+        images
+        price
+        slug
+        updatedAt
+        description
+        createdAt
+    }
+}
+
+mutation RemoveDish($where: DishWhereUniqueInput!) {
+    removeDish(where: $where) {
+        id
+        name
+        images
+        price
+        slug
+        updatedAt
+        description
+        createdAt
+    }
+}

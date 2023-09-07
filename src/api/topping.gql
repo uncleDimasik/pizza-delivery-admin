@@ -1,0 +1,77 @@
+query Topping($where: ToppingWhereUniqueInput!) {
+    topping(where: $where) {
+        id
+        name
+        ingredientLabelId
+        ingredientLabel {
+            image
+            name
+            id
+        }
+        option {
+            id
+            name
+            price
+        }
+        price
+    }
+}
+
+query Toppings {
+    toppings {
+        id
+        name
+        ingredientLabelId
+        ingredientLabel {
+            image
+            name
+            id
+        }
+        price
+        option {
+            id
+            name
+            price
+        }
+    }
+}
+
+mutation UpdateTopping($data: ToppingUpdateInput!, $where: ToppingWhereUniqueInput!) {
+    updateTopping(data: $data, where: $where) {
+        id
+        name
+        ingredientLabelId
+        ingredientLabel {
+            image
+            name
+            id
+        }
+        price
+    }
+}
+mutation CreateTopping($data: ToppingCreateInput!) {
+    createTopping(data: $data) {
+        id
+        name
+        ingredientLabelId
+        ingredientLabel {
+            image
+            name
+            id
+        }
+        price
+    }
+}
+mutation RemoveTopping($where: ToppingWhereUniqueInput!) {
+    removeTopping(where: $where) {
+        id
+        name
+        ingredientLabelId
+        ingredientLabel {
+            image
+            name
+            id
+        }
+        price
+    }
+}
